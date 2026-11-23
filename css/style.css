@@ -1,0 +1,398 @@
+
+:root {
+    --green: #718b75;
+    --green-dark: #526d57;
+    --background: #f6f8f5;
+    --white: #ffffff;
+    --text: #27302a;
+    --muted: #7b847d;
+    --border: #e5e9e4;
+    --light-green: #e7f0e8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background: var(--background);
+    color: var(--text);
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.auth-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 1050px;
+    min-height: 580px;
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 14px 45px rgba(25, 45, 30, 0.09);
+}
+
+.brand-panel {
+    background: var(--green);
+    color: white;
+    padding: 65px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand-tag {
+    display: inline-block;
+    width: fit-content;
+    padding: 10px 16px;
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 30px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.brand-panel h1 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.15;
+    margin: 30px 0 20px;
+}
+
+.brand-panel p {
+    font-size: 18px;
+    line-height: 1.7;
+    opacity: .9;
+}
+
+.brand-note {
+    margin-top: 50px;
+    font-size: 15px;
+    opacity: .8;
+}
+
+.form-panel {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.small-brand {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--green);
+    margin-bottom: 25px;
+}
+
+.form-heading h2 {
+    font-size: 32px;
+    margin: 0 0 10px;
+}
+
+.form-heading p {
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+form label {
+    display: block;
+    margin: 17px 0 8px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+form input,
+form select {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: white;
+    color: var(--text);
+    outline: none;
+}
+
+form input:focus,
+form select:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px var(--light-green);
+}
+
+.primary-btn {
+    display: block;
+    width: 100%;
+    min-height: 49px;
+    margin-top: 25px;
+    padding: 12px 18px;
+    background: var(--green);
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background: var(--green-dark);
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 24px;
+    color: var(--muted);
+}
+
+.form-footer a {
+    color: var(--green-dark);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+.input-note {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 7px 0;
+}
+
+.error-box,
+.success-box {
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.error-box {
+    background: #fae8e8;
+    color: #a63f3f;
+}
+
+.error-box p {
+    margin: 5px 0;
+}
+
+.success-box {
+    background: var(--light-green);
+    color: var(--green-dark);
+}
+
+/* DASHBOARD */
+
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 255px;
+    flex-shrink: 0;
+    background: white;
+    border-right: 1px solid var(--border);
+    padding: 24px 14px;
+    transition: width .2s;
+}
+
+.sidebar-brand {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--green-dark);
+    margin: 18px 10px 35px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+}
+
+.sidebar-item.active,
+.sidebar-item:hover {
+    background: var(--light-green);
+    color: var(--green-dark);
+}
+
+.sidebar-icon {
+    width: 26px;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 21px;
+}
+
+.toggle-btn {
+    border: 0;
+    background: var(--light-green);
+    color: var(--green-dark);
+    padding: 10px 14px;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.dashboard-main {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+}
+
+.topbar,
+.dashboard-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 22px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.dashboard-title {
+    margin: 35px 0 25px;
+    font-size: 32px;
+}
+
+.dashboard-card h3 {
+    margin-top: 0;
+}
+
+.role-tag {
+    display: inline-block;
+    background: var(--light-green);
+    color: var(--green-dark);
+    padding: 9px 15px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.muted {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.collapsed .sidebar {
+    width: 78px;
+}
+
+.collapsed .sidebar-text,
+.collapsed .sidebar-brand {
+    display: none;
+}
+
+.collapsed .sidebar-item {
+    justify-content: center;
+}
+
+.confirm-dialog {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+    width: min(400px, 90vw);
+    color: var(--text);
+}
+
+.confirm-dialog::backdrop {
+    background: rgba(15, 25, 18, .5);
+}
+
+.confirm-dialog h3 {
+    margin-top: 0;
+    color: var(--green-dark);
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.dialog-actions form {
+    margin: 0;
+}
+
+.dialog-btn {
+    padding: 12px 20px;
+    border-radius: 9px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    background: white;
+}
+
+.dialog-btn.confirm {
+    background: var(--green);
+    color: white;
+    border-color: var(--green);
+}
+
+@media (max-width: 800px) {
+    .auth-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-panel {
+        padding: 35px;
+    }
+
+    .brand-panel h1 {
+        font-size: 30px;
+    }
+
+    .brand-note {
+        margin-top: 15px;
+    }
+
+    .form-panel {
+        padding: 30px;
+    }
+
+    .sidebar {
+        width: 78px;
+    }
+
+    .sidebar-text,
+    .sidebar-brand {
+        display: none;
+    }
+
+    .sidebar-item {
+        justify-content: center;
+    }
+
+    .dashboard-main {
+        padding: 15px;
+    }
+}
